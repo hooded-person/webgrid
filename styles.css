@@ -1,0 +1,73 @@
+:root {
+	--tile-size: 75px;
+}
+body {
+    font-family: 'PT Mono', monospace;
+    margin: 0px;
+	padding: 0px;
+	
+	background-color: green;
+	height: 100vh;
+	width: 100vw; 
+}
+
+
+#tileContainer {
+	height: 100%;
+	width: 100%;
+}
+.tileRow {
+	display: flex;
+}
+
+.tile {
+	height: var(--tile-size);
+	width: var(--tile-size);
+	background-color: white;
+	position: relative;
+	overflow-wrap: anywhere;
+	
+}
+.tile > .g {
+	position: absolute;
+	top: 2.5%;
+	left: 5%;
+}
+.tile > .h {
+	position: absolute;
+	top: 2.5%;
+	right: 5%;
+}
+.tile > .f {
+	font-size: 2em;
+	position: absolute;
+	top: calc(50% - 0.5em);
+	left: calc(50% - 0.5em);
+}
+
+.tileRow:nth-child(even) > .tile:nth-child(even), .tileRow:nth-child(odd) > .tile:nth-child(odd) {
+	background-color: lightGray;
+}
+
+
+.entity {
+	border-radius: 50%;
+	position: absolute;
+	z-index: 1;
+	height: 80%;
+	width: 80%;
+	top: 10%;
+	left: 10%;
+}
+.player {
+	background-color: red;
+}
+.target {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	
+	background-color: blue;
+	z-index:0;
+}

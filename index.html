@@ -1,0 +1,22 @@
+<!-- /blankTemplate.html -->
+<html>
+	<head>
+		<title>title - template</title>
+		<link rel="icon" type="image/x-icon" href=""> <!-- to get a favicon from a defined site use https://www.google.com/s2/favicons?domain=<site> -->
+  		<link rel="stylesheet" href="styles.css">
+		<script> /* load eruda if ?eruda=true */
+			;(function () {
+			    var src = 'https://cdn.jsdelivr.net/npm/eruda';
+			    if (!/eruda=true/.test(window.location) && localStorage.getItem('active-eruda') != 'true') return;	
+			    document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+			    document.write('<scr' + 'ipt>eruda.init();</scr' + 'ipt>');
+				( /notify/.test(window.location) ? [ console.log, alert ] : [ console.log ] ).forEach((el)=>el("eruda loaded"))
+			})();
+		</script>
+	</head>
+	<body>
+		<div id="tileContainer"></div>
+		<script src="./entityAi.js"></script>
+		<script src="./script.js"></script>
+	</body>
+</html>
